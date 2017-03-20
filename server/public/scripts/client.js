@@ -7,7 +7,7 @@ $(document).ready(function() {
     eventListeners();
 
     $("#calculate").on('click', function() {
-        console.log('button on');
+        console.log( 'calculate button on' );
 
         var input = {};
         input.x = $('#valueX').val();
@@ -25,10 +25,11 @@ $(document).ready(function() {
             data: input,
             success: function(response) {
                 console.log('Detroit');
-                appendDom(response);
+                appendDom(parseInt(response));
             }
         });
     });
+
 
 
 }); //end doc ready
@@ -56,7 +57,8 @@ function eventListeners() {
 
     $('#clear').on('click', function() {
         console.log('clear is on');
-        $('.enterValues').empty();
+        $('.enterValues').children().empty();
+        // $('.enterValues').children().empty();
         // $( '#valueY' ).empty();
         $('.answers').empty();
 

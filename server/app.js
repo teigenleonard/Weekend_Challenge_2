@@ -21,28 +21,28 @@ app.get('/', function(req, res) {
 app.post('/calculator', function(req, res) {
     console.log('Rock City!');
     console.log( req.body );
-    var input = req;
-    calculationStation(input.x, input.y, input.type);
+    var input = req.body;
+    calculationStation(input);
     res.send(answer);
     res.sendStatus(200);
 });
 
 //listen
 app.listen(port, function() {
-    console.log('listening');
+    console.log( 'listening' );
 });
 
-function calculationStation(x, y, type) {
+function calculationStation() {
     var answer = 0
     console.log('calculationStation');
-    if ( 'add' ) {
-        return (answer = parseInt(x) + parseInt(y));
-    } else if ( 'subtract' ) {
-        return (answer = parseInt(x) - parseInt(y));
-    } else if ( 'multiply' ) {
-        return (answer = parseInt(x) * parseInt(y));
-    } else if ( 'divide' ) {
-        return (answer = parseInt(x) / parseInt(y));
+    if ( input.type = 'add' ) {
+        return ( answer = input.x + input.y );
+    } else if ( type = 'subtract' ) {
+        return ( answer = input.x - input.y );
+    } else if ( type = 'multiply' ) {
+        return ( answer = input.x * input.y );
+    } else if ( type  = 'divide' ) {
+        return ( answer = input.x / input.y );
     };
 } //end calculationStation
 
